@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Anime Genre Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+         <nav>
+            <a href="index.html" class="logo">Anime Genres</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="isekai.html">Isekai</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-page form-page">
+        <h1>Login</h1>
+        <p>(Note: Login functionality is not implemented in this demo.)</p>
+
+        <form id="login-form" action="javascript:void(0);">
+             <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+             <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p id="form-message" class="form-feedback"></p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anime Genre Explorer - Frontend Demo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
