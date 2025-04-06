@@ -1,33 +1,84 @@
-/* General Styles */
+/* CSS Variables */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --header-bg: #333a45;
+  --header-text: #fff;
+  --nav-link-color: #eee;
+  --nav-active-bg: #555c66;
+  --body-bg: #f4f4f8;
+  --content-bg: #fff;
+  --text-color: #333;
+  --heading-color: #333a45;
+  --link-color: var(--primary-color);
+  --card-bg: #f8f9fa;
+  --card-border: #dee2e6;
+  --card-disabled-bg: #e9ecef;
+  --card-disabled-text: #6c757d;
+  --footer-bg: #e9ecef;
+  --footer-text: var(--card-disabled-text);
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --success-border: #c3e6cb;
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+  --error-border: #f5c6cb;
+}
+
+/* Basic Reset & General Styles */
+*, *::before, *::after {
+    box-sizing: border-box; /* Apply box-sizing globally */
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f8; /* Light grey-blue background */
-    color: #333;
+    background-color: var(--body-bg);
+    color: var(--text-color);
     line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+/* Homepage Specific Background */
+body.homepage {
+    background-image: url('https://images6.alphacoders.com/135/thumb-1920-1351414.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 a {
-    color: #007bff; /* Standard blue link color */
+    color: var(--link-color);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: var(--primary-hover);
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 /* Header & Navigation */
 header {
-    background-color: #333a45; /* Dark background for header */
-    color: #fff;
-    padding: 10px 0;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 5px 0; /* Reduced padding slightly */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -37,12 +88,18 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 nav .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #fff;
+    color: var(--header-text);
+    text-decoration: none;
+    padding: 5px 0;
+    margin-right: 20px; /* Add space between logo and links */
+}
+nav .logo:hover {
     text-decoration: none;
 }
 
@@ -51,132 +108,211 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align wrapped items vertically */
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 10px; /* Adjust spacing */
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 nav ul li a {
-    color: #eee;
+    color: var(--nav-link-color);
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 6px 12px; /* Adjusted padding */
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    white-space: nowrap; /* Prevent link text wrapping */
 }
 
 nav ul li a:hover,
-nav ul li a.active { /* Style for the current page link */
-    background-color: #555c66;
-    color: #fff;
+nav ul li a.active {
+    background-color: var(--nav-active-bg);
+    color: var(--header-text);
     text-decoration: none;
 }
 
 /* Main Content Area */
 main {
-    max-width: 1100px; /* Slightly less than nav max-width for padding */
+    max-width: 1100px;
     margin: 30px auto;
-    padding: 20px;
-    background-color: #fff;
+    padding: 25px; /* Increased padding */
+    background-color: var(--content-bg);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* Slightly adjusted shadow */
 }
 
-/* Homepage Specific */
+/* Homepage Specific Elements */
 .hero {
     text-align: center;
     padding: 40px 20px;
-    background-color: #e9ecef; /* Light grey hero section */
+    background-color: rgba(233, 236, 239, 0.9);
     border-radius: 8px;
     margin-bottom: 30px;
 }
 
 .hero h1 {
     margin-bottom: 10px;
-    color: #333a45;
+    color: var(--heading-color);
+    font-size: 2.2em; /* Slightly larger */
+}
+.hero p {
+    font-size: 1.1em; /* Slightly larger */
+    color: var(--text-color);
 }
 
 .genre-links h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333a45;
+    margin-bottom: 25px; /* Increased margin */
+    color: var(--heading-color);
+    font-size: 1.8em;
 }
 
 .genre-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Slightly larger min */
+    gap: 25px; /* Increased gap */
 }
 
 .genre-card {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 20px;
+    border: 1px solid var(--card-border);
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    color: #333;
+    color: var(--header-text);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px; /* Increased height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.genre-card .card-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 .genre-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-6px) scale(1.03); /* Enhanced hover effect */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     text-decoration: none;
+    color: var(--header-text);
+}
+.genre-card:hover .card-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
+
 .genre-card.disabled-card {
-    background-color: #e9ecef;
-    color: #6c757d;
-    cursor: not-allowed;
-    opacity: 0.7;
+    background-color: var(--card-disabled-bg);
+    background-image: none !important;
+    color: var(--card-disabled-text);
+    cursor: pointer;
+    opacity: 0.8;
 }
+.genre-card.disabled-card .card-overlay {
+    background-color: transparent;
+}
+.genre-card.disabled-card h3 {
+     color: var(--heading-color); /* Darker text for disabled */
+}
+.genre-card.disabled-card p {
+     color: var(--card-disabled-text);
+}
+
 .genre-card.disabled-card:hover {
-     transform: none;
-     box-shadow: none;
+   transform: none;
+   box-shadow: none;
+   opacity: 1.0;
 }
+
 
 .genre-card h3 {
     margin-top: 0;
-    color: #0056b3; /* Darker blue for card titles */
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 1.4em;
+}
+.genre-card p {
+    margin-bottom: 0;
+    font-size: 0.95em;
+    max-width: 90%; /* Prevent text overflowing too much */
 }
 
 /* Content Page Specific (Genres, Contact, Login) */
 .content-page h1 {
-    color: #333a45;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    color: var(--heading-color);
+    border-bottom: 3px solid var(--primary-color); /* Thicker border */
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 2em;
 }
 
 .content-page h2 {
-    color: #333a45;
-    margin-top: 30px;
+    color: var(--heading-color);
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--card-border); /* Subtle underline for H2 */
+    padding-bottom: 5px;
 }
 
 .genre-banner {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: #eee; /* Placeholder background */
+    margin-bottom: 25px;
+    background-color: #eee;
+    border: 1px solid var(--card-border); /* Added border */
 }
 
 .content-page ul {
-    padding-left: 20px;
+    padding-left: 25px; /* Increased indent */
+    margin-bottom: 25px;
+}
+.content-page ul li {
+    margin-bottom: 10px;
+}
+/* Style links within the example list */
+.content-page ul li a {
+     font-weight: 500;
+}
+.content-page ul li a:hover {
+     text-decoration: underline;
+     color: var(--primary-hover);
 }
 
+
 /* Form Styling (Contact, Login) */
-.form-page p:first-of-type { /* Add space below intro paragraph */
+.form-page p:first-of-type {
     margin-bottom: 20px;
 }
 
-.form-page p:nth-of-type(2) { /* Style the note */
+.form-page p:nth-of-type(2) {
     font-style: italic;
-    color: #6c757d; /* Grey color for note */
+    color: var(--card-disabled-text);
     margin-bottom: 30px;
     font-size: 0.9em;
+    background-color: var(--footer-bg); /* Add slight background to note */
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
 }
-
 
 .form-group {
     margin-bottom: 20px;
@@ -184,8 +320,9 @@ main {
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px; /* Increased space */
     font-weight: bold;
+    font-size: 0.95em;
 }
 
 .form-group input[type="text"],
@@ -193,67 +330,202 @@ main {
 .form-group input[type="password"],
 .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Increased padding */
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Include padding in width */
     font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Focus outline */
+    outline: none;
 }
 
+
 .form-group textarea {
-    resize: vertical; /* Allow vertical resize only */
+    resize: vertical;
+    min-height: 100px; /* Minimum height */
 }
 
 button[type="submit"],
 #random-suggestion-btn {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
-    padding: 12px 20px;
+    padding: 12px 25px; /* Adjusted padding */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    font-size: 1.05em; /* Slightly larger font */
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px; /* Add some space above buttons */
 }
-
 button[type="submit"]:hover,
 #random-suggestion-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
+    transform: scale(1.03);
 }
 
-.form-feedback { /* Style for JS messages */
-    margin-top: 15px;
-    padding: 10px;
+.form-feedback {
+    margin-top: 20px; /* Increased space */
+    padding: 12px; /* Increased padding */
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
+    font-size: 0.95em;
 }
 
 .form-feedback.success {
-    background-color: #d4edda; /* Light green */
-    color: #155724; /* Dark green */
-    border: 1px solid #c3e6cb;
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid var(--success-border);
 }
 
 .form-feedback.error {
-    background-color: #f8d7da; /* Light red */
-    color: #721c24; /* Dark red */
-    border: 1px solid #f5c6cb;
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
 }
 
 /* Suggestion Output */
 #suggestion-output {
-    margin-top: 15px;
+    margin-top: 20px; /* Increased space */
     font-weight: bold;
     font-style: italic;
+    min-height: 1.2em;
+    background-color: var(--footer-bg); /* Add slight background */
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
+    display: inline-block; /* Make background fit content */
+    max-width: 100%;
+}
+
+/* Back to Top Button */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+    display: none; /* Hidden by default, shown by JS */
+    z-index: 999;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#back-to-top-btn:hover {
+    background-color: var(--primary-hover);
+    opacity: 1.0;
+    color: white;
+    text-decoration: none;
+    transform: scale(1.1); /* Enlarge on hover */
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #e9ecef;
-    color: #6c757d;
+    margin-top: 50px; /* Increased space */
+    padding: 25px; /* Increased padding */
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     font-size: 0.9em;
+    border-top: 1px solid var(--card-border); /* Added top border */
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 992px) { /* Adjust breakpoint for nav earlier */
+    nav {
+        justify-content: center;
+    }
+     nav .logo {
+        margin-right: 0; /* Remove margin when centered */
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Adjust base font size */
+    }
+    nav ul li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    nav ul li a {
+        padding: 5px 8px; /* Reduce padding */
+    }
+    main {
+        margin: 20px 10px;
+        padding: 20px; /* Adjust padding */
+    }
+    .genre-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust min size */
+        gap: 20px;
+    }
+     .genre-card {
+        min-height: 160px; /* Adjust height */
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+     .content-page h1 {
+         font-size: 1.8em;
+     }
+     .content-page h2 {
+         font-size: 1.4em;
+     }
+    #back-to-top-btn {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+     .genre-grid {
+        grid-template-columns: 1fr; /* Force single column */
+    }
+     nav ul li a {
+         padding: 4px 6px;
+     }
+      .hero h1 {
+        font-size: 1.7em;
+    }
+     .hero p {
+         font-size: 1em;
+     }
+      .content-page h1 {
+         font-size: 1.6em;
+     }
+     .content-page h2 {
+         font-size: 1.3em;
+     }
+     button[type="submit"],
+     #random-suggestion-btn {
+         padding: 10px 20px;
+         font-size: 1em;
+     }
 }
