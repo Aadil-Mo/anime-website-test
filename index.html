@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Genre Explorer</title>
+    <meta name="description" content="Explore various genres of anime like Shonen, Shojo, Isekai, Mecha, and more. Find descriptions, examples, and get random suggestions.">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="homepage">
     <header>
         <nav>
             <a href="index.html" class="logo">Anime Genres</a>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="shojo.html">Shojo</a></li>
+                <li><a href="seinen.html">Seinen</a></li>
                 <li><a href="isekai.html">Isekai</a></li>
+                <li><a href="mecha.html">Mecha</a></li>
+                <li><a href="slice-of-life.html">Slice of Life</a></li>
+                <li><a href="romance.html">Romance</a></li>
+                <li><a href="sci-fi.html">Sci-Fi</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
@@ -29,21 +36,60 @@
         <section class="genre-links">
             <h2>Explore Genres</h2>
             <div class="genre-grid">
-                <a href="shonen.html" class="genre-card">
-                    <h3>Shonen</h3>
-                    <p>Action-packed adventures often aimed at young male audiences.</p>
+                <a href="shonen.html" class="genre-card" style="background-image: url('https://i.redd.it/7z9k5j88iigb1.png');" aria-label="Explore Shonen Genre">
+                    <div class="card-overlay">
+                        <h3>Shonen</h3>
+                        <p>Action-packed adventures often aimed at young male audiences.</p>
+                    </div>
                 </a>
-                <a href="isekai.html" class="genre-card">
-                    <h3>Isekai</h3>
-                    <p>Stories where characters are transported to another world.</p>
+                <a href="shojo.html" class="genre-card" style="background-image: url('https://static1.dualshockersimages.com/wordpress/wp-content/uploads/2022/11/10-best-shoujo-anime-officially-ranked.jpg?q=50&fit=crop&w=1140&h=&dpr=1.5');" aria-label="Explore Shojo Genre">
+                     <div class="card-overlay">
+                        <h3>Shojo</h3>
+                        <p>Focusing on romance and relationships, often for young female audiences.</p>
+                    </div>
                 </a>
-                <a href="#" class="genre-card disabled-card">
-                    <h3>Shojo</h3>
-                    <p>Focusing on romance and relationships, often for young female audiences (Coming Soon!).</p>
+                 <a href="seinen.html" class="genre-card" style="background-image: url('https://www.anime-planet.com/images/anime/tags/seinen-318.jpg');" aria-label="Explore Seinen Genre">
+                     <div class="card-overlay">
+                        <h3>Seinen</h3>
+                        <p>Targeted at adult audiences, often with mature themes and complexity.</p>
+                     </div>
                 </a>
-                 <a href="#" class="genre-card disabled-card">
-                    <h3>Mecha</h3>
-                    <p>Featuring giant robots and futuristic warfare (Coming Soon!).</p>
+                <a href="isekai.html" class="genre-card" style="background-image: url('https://scontent-man2-1.cdninstagram.com/v/t51.29350-15/473544218_1272094387360947_5436659886349440111_n.heic?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuQ0FST1VTRUxfSVRFTS5pbWFnZV91cmxnZW4uMTQ0MHgxODAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=scontent-man2-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QF2LSo8SMuvLl5Qs9v-DDafjyTrsNaWrPo6HeWT8F_AxBytZC5rFQpiZVEzW8hVajU&_nc_ohc=7Ep5GgKppY8Q7kNvwHrBYiB&_nc_gid=Hcf32cMP2HgDYTkPSWzU_g&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzU0MzMyNDA2NDczNjkyMjAwOQ%3D%3D.3-ccb7-5&oh=00_AfFyivugQIKOfjyOOYQ71Og5gRigOFGz5Yg-E2AbaQr3cA&oe=67F84D5D&_nc_sid=10d13b');" aria-label="Explore Isekai Genre">
+                     <div class="card-overlay">
+                        <h3>Isekai</h3>
+                        <p>Stories where characters are transported to another world.</p>
+                    </div>
+                </a>
+                 <a href="mecha.html" class="genre-card" style="background-image: url('https://animeindianphilosopher.wordpress.com/wp-content/uploads/2017/01/vecl4y.jpg?w=2400&h=1600&crop=1');" aria-label="Explore Mecha Genre">
+                     <div class="card-overlay">
+                        <h3>Mecha</h3>
+                        <p>Featuring giant robots and futuristic warfare.</p>
+                     </div>
+                 </a>
+                 <a href="slice-of-life.html" class="genre-card" style="background-image: url('https://www.anime-planet.com/images/anime/tags/slice-of-life-127.jpg');" aria-label="Explore Slice of Life Genre">
+                    <div class="card-overlay">
+                        <h3>Slice of Life</h3>
+                        <p>Focusing on the everyday lives and experiences of characters.</p>
+                    </div>
+                </a>
+                 <a href="romance.html" class="genre-card" style="background-image: url('https://images.alphacoders.com/193/193181.jpg');" aria-label="Explore Romance Genre">
+                     <div class="card-overlay">
+                         <h3>Romance</h3>
+                         <p>Centering on the development of romantic relationships.</p>
+                     </div>
+                 </a>
+                <a href="sci-fi.html" class="genre-card" style="background-image: url('https://images8.alphacoders.com/937/937234.jpg');" aria-label="Explore Sci-Fi Genre">
+                    <div class="card-overlay">
+                        <h3>Sci-Fi</h3>
+                        <p>Dealing with futuristic concepts, technology, and space.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="genre-card disabled-card" aria-label="Sports Genre (Coming Soon)">
+                     <div class="card-overlay disabled-overlay">
+                        <h3>Sports</h3>
+                        <p>Focusing on athletic competition and teamwork (Coming Soon!).</p>
+                    </div>
                 </a>
             </div>
         </section>
@@ -52,6 +98,8 @@
     <footer>
         <p>&copy; 2025 Anime Genre Explorer - Frontend Demo</p>
     </footer>
+
+    <a href="#" id="back-to-top-btn" title="Back to Top" style="display: none;">&uarr;</a>
 
     <script src="js/script.js"></script>
 </body>
