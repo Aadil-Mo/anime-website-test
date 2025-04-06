@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isekai Anime - Anime Genre Explorer</title>
+     <meta name="description" content="Explore the Isekai anime genre where characters are transported to another world. See characteristics, examples, and get suggestions.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +14,13 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="shojo.html">Shojo</a></li>
+                <li><a href="seinen.html">Seinen</a></li>
                 <li><a href="isekai.html" class="active">Isekai</a></li>
+                <li><a href="mecha.html">Mecha</a></li>
+                <li><a href="slice-of-life.html">Slice of Life</a></li>
+                <li><a href="romance.html">Romance</a></li>
+                <li><a href="sci-fi.html">Sci-Fi</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
@@ -22,7 +29,8 @@
 
     <main class="content-page">
         <h1>Isekai Genre</h1>
-        <img src="https://via.placeholder.com/600x200?text=Isekai+Anime+Banner" alt="Isekai Anime Banner" class="genre-banner">
+        <img src="https://scontent-man2-1.cdninstagram.com/v/t51.29350-15/473544218_1272094387360947_5436659886349440111_n.heic?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuQ0FST1VTRUxfSVRFTS5pbWFnZV91cmxnZW4uMTQ0MHgxODAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=scontent-man2-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QF2LSo8SMuvLl5Qs9v-DDafjyTrsNaWrPo6HeWT8F_AxBytZC5rFQpiZVEzW8hVajU&_nc_ohc=7Ep5GgKppY8Q7kNvwHrBYiB&_nc_gid=Hcf32cMP2HgDYTkPSWzU_g&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzU0MzMyNDA2NDczNjkyMjAwOQ%3D%3D.3-ccb7-5&oh=00_AfFyivugQIKOfjyOOYQ71Og5gRigOFGz5Yg-E2AbaQr3cA&oe=67F84D5D&_nc_sid=10d13b" alt="Banner featuring various Isekai anime characters" class="genre-banner">
+
         <p>Isekai (異世界), meaning "different world" or "otherworld," is a popular genre where the protagonist is transported to or reincarnated in another world, often one resembling a fantasy setting or video game. They must adapt to their new surroundings, often possessing unique abilities or knowledge from their previous life.</p>
 
         <h2>Key Characteristics:</h2>
@@ -36,21 +44,26 @@
 
         <h2>Popular Examples:</h2>
         <ul>
-            <li>Re:Zero - Starting Life in Another World</li>
-            <li>Sword Art Online (arcs often fit)</li>
-            <li>That Time I Got Reincarnated as a Slime</li>
-            <li>KonoSuba: God's Blessing on this Wonderful World!</li>
-            <li>Overlord</li>
-            <li>No Game No Life</li>
+            <li><a href="https://myanimelist.net/search/all?q=Re%20Zero" target="_blank" rel="noopener noreferrer">Re:Zero - Starting Life in Another World</a></li>
+            <li><a href="https://myanimelist.net/search/all?q=Sword%20Art%20Online" target="_blank" rel="noopener noreferrer">Sword Art Online</a> (Arcs often fit)</li>
+            <li><a href="https://myanimelist.net/search/all?q=That%20Time%20I%20Got%20Reincarnated%20as%20a%20Slime" target="_blank" rel="noopener noreferrer">That Time I Got Reincarnated as a Slime</a></li>
+            <li><a href="https://myanimelist.net/search/all?q=Konosuba" target="_blank" rel="noopener noreferrer">KonoSuba: God's Blessing on this Wonderful World!</a></li>
+            <li><a href="https://myanimelist.net/search/all?q=Overlord" target="_blank" rel="noopener noreferrer">Overlord</a></li>
+            <li><a href="https://myanimelist.net/search/all?q=No%20Game%20No%20Life" target="_blank" rel="noopener noreferrer">No Game No Life</a></li>
+            <li><a href="https://myanimelist.net/search/all?q=Mushoku%20Tensei" target="_blank" rel="noopener noreferrer">Mushoku Tensei: Jobless Reincarnation</a></li>
+             <li><a href="https://myanimelist.net/search/all?q=Log%20Horizon" target="_blank" rel="noopener noreferrer">Log Horizon</a></li>
+             <li><a href="https://myanimelist.net/search/all?q=The%20Rising%20of%20the%20Shield%20Hero" target="_blank" rel="noopener noreferrer">The Rising of the Shield Hero</a></li>
         </ul>
 
          <button id="random-suggestion-btn" data-genre="Isekai">Suggest a Random Isekai Anime</button>
-         <p id="suggestion-output"></p>
+         <p id="suggestion-output" aria-live="polite"></p>
     </main>
 
     <footer>
         <p>&copy; 2025 Anime Genre Explorer - Frontend Demo</p>
     </footer>
+
+    <a href="#" id="back-to-top-btn" title="Back to Top" style="display: none;">&uarr;</a>
 
     <script src="js/script.js"></script>
 </body>
